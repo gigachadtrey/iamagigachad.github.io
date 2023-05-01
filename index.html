@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Button and Progress Bar Example</title>
+  </head>
+  <body>
+    <button onclick="startProgressBar()">Button</button>
+    <br><br>
+    <div style="width: 500px; height: 20px; border: 1px solid #000;">
+      <div id="progressBar" style="width: 0%; height: 100%; background-color: green;"></div>
+    </div>
+    
+    <script>
+      function startProgressBar() {
+        var progressBar = document.getElementById("progressBar");
+        var width = 0;
+        var interval = setInterval(frame, 70);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(interval);
+          } else {
+            width++;
+            progressBar.style.width = width + '%';
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
